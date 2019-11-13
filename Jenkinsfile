@@ -1,13 +1,14 @@
 pipeline {
    agent any
+
    stages {
       stage('Build') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/djossiepro/maven-project.git'
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
 
             // Run Maven on a Unix agent.
-            sh "'/usr/share/maven/bin/mvn' clean package"
+            sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
