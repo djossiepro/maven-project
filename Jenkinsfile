@@ -7,7 +7,7 @@ pipeline {
             git 'https://github.com/djossiepro/maven-project.git'
 
             // Run Maven on a Unix agent.
-            sh '/usr/share/maven/bin/mvn clean package'
+            sh "'/usr/share/maven/bin/mvn' clean package"
 
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
